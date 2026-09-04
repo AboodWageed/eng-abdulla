@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Showcase | Abdullah Wageed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 relative min-h-screen">
+
+    <nav class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center text-slate-950 font-black text-xl">
+                    AW
+                </div>
+                <span class="text-xl font-extrabold text-white">Wageed<span class="text-cyan-400">.Gallery</span></span>
+            </a>
+
+            <a href="index.html" class="px-4 py-2 rounded-xl glass-panel border border-slate-700 text-xs font-bold text-slate-300 hover:text-white hover:border-cyan-500 transition-all">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Back to Main Site
+            </a>
+        </div>
+    </nav>
+
+    <section class="pt-36 pb-12 relative z-10 border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="px-4 py-1.5 rounded-full glass-panel border border-cyan-500/30 text-cyan-400 text-xs font-extrabold uppercase tracking-widest mb-4 inline-block">
+                Interactive Showcase
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-4">Engineering Portfolio</h1>
+            <p class="text-slate-400 text-base max-w-2xl mx-auto">Explore software systems, web applications, network topologies, and mobile solutions developed by Abdullah Wageed.</p>
+
+            <div class="mt-10 max-w-3xl mx-auto space-y-6">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                    <input type="text" id="projectSearch" onkeyup="searchProjects()" placeholder="Search by tech stack (e.g. ASP.NET, Flutter, MikroTik, SQL)..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors text-sm">
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button onclick="filterCategory('all')" class="cat-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-cyan-500 text-slate-950" data-cat="all">All Projects</button>
+                    <button onclick="filterCategory('web')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all glass-panel border border-slate-800 text-slate-300 hover:text-cyan-400" data-cat="web">Web & ASP.NET</button>
+                    <button onclick="filterCategory('mobile')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all glass-panel border border-slate-800 text-slate-300 hover:text-cyan-400" data-cat="mobile">Mobile Apps</button>
+                    <button onclick="filterCategory('network')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all glass-panel border border-slate-800 text-slate-300 hover:text-cyan-400" data-cat="network">Network & Automation</button>
+                    <button onclick="filterCategory('desktop')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all glass-panel border border-slate-800 text-slate-300 hover:text-cyan-400" data-cat="desktop">Desktop & DB</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+
+                <!-- Item 1 -->
+                <div class="p-item web rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="asp.net c# sql server web library">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-[10px] font-bold uppercase tracking-wider border border-cyan-500/20">ASP.NET Web System</span>
+                            <i class="fa-solid fa-book-bookmark text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">HN_Book - E-Library Platform</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Digital web library system featuring user authentication, payment transaction logs, author profiles, and database security audit logs.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">ASP.NET</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">C#</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('HN_Book E-Library System', 'Complete digital library web management application engineered with ASP.NET Core and SQL Server. Features user management roles, payment transaction auditing, and relational author-book mapping.', ['C#', 'ASP.NET Core', 'SQL Server'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500 text-slate-200 hover:text-cyan-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="p-item desktop rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="c# desktop sql server restaurant POS">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-[10px] font-bold uppercase tracking-wider border border-indigo-500/20">Desktop & POS</span>
+                            <i class="fa-solid fa-utensils text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Sana'a Restaurant POS</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Real-time order logging, kitchen dispatch queue, billing automation, and transactional SQL database handling.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-indigo-300">C# WinForms</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-indigo-300">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Sana\'a Restaurant POS', 'Commercial desktop software built for speed-critical order processing. Handles table layouts, kitchen printing triggers, daily sales reports, and multi-user privilege levels.', ['C# WinForms', 'SQL Server Transact-SQL'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500 text-slate-200 hover:text-indigo-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="p-item network rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="mikrotik hotspot wifi voucher network API">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-wider border border-purple-500/20">MikroTik Automation</span>
+                            <i class="fa-solid fa-wifi text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Wi-Fi Voucher Dispatcher</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Automated Wi-Fi internet card distribution integrated with local mobile payments and MikroTik Hotspot API.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-purple-300">MikroTik RouterOS</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-purple-300">REST API</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Wi-Fi Voucher System', 'Network software integration that automatically triggers MikroTik RouterOS user creation upon receiving verified mobile payment webhooks.', ['MikroTik API', 'Python', 'Webhooks'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-purple-500 text-slate-200 hover:text-purple-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Detail -->
+    <div id="projectModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-2xl w-full rounded-3xl p-8 border border-slate-800 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modalTitle" class="text-2xl font-extrabold text-white mb-3">Project Title</h3>
+            <p id="modalDesc" class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">Detailed description...</p>
+            
+            <div class="mb-6">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">Technologies Used:</span>
+                <div id="modalTech" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="flex gap-4 pt-4 border-t border-slate-800">
+                <a id="modalGithub" href="#" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-cyan-400 font-bold text-xs flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> Repository
+                </a>
+                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterCategory(cat) {
+            const buttons = document.querySelectorAll('.cat-btn');
+            const items = document.querySelectorAll('.p-item');
+
+            buttons.forEach(btn => {
+                if(btn.getAttribute('data-cat') === cat) {
+                    btn.classList.add('bg-cyan-500', 'text-slate-950');
+                    btn.classList.remove('glass-panel', 'text-slate-300');
+                } else {
+                    btn.classList.remove('bg-cyan-500', 'text-slate-950');
+                    btn.classList.add('glass-panel', 'text-slate-300');
+                }
+            });
+
+            items.forEach(item => {
+                if(cat === 'all' || item.classList.contains(cat)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function searchProjects() {
+            const query = document.getElementById('projectSearch').value.toLowerCase();
+            const items = document.querySelectorAll('.p-item');
+
+            items.forEach(item => {
+                const keywords = item.getAttribute('data-keywords').toLowerCase();
+                const text = item.innerText.toLowerCase();
+                if(keywords.includes(query) || text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(title, desc, techStack, githubUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            
+            const techContainer = document.getElementById('modalTech');
+            techContainer.innerHTML = '';
+            techStack.forEach(t => {
+                const badge = document.createElement('span');
+                badge.className = 'px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 text-xs font-semibold';
+                badge.innerText = t;
+                techContainer.appendChild(badge);
+            });
+
+            document.getElementById('modalGithub').href = githubUrl;
+            document.getElementById('projectModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+OS.init({ once: true, duration: 800 });
+        const words = ["ASP.NET Solutions", "Flutter Apps", "SQL Server Architectures", "MikroTik Networks"];
+        let i = 0;
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typing-text').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                setTimeout(loopTyping, 100);
+            };
+            loopTyping();
+        }
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typing-text').innerHTML = word.join("");
+                } else {
+                    i = (words.length > (i + 1)) ? i + 1 : 0;
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                setTimeout(loopDeleting, 50);
+            };
+            loopDeleting();
+        }
+        typingEffect();
+    </script>
+</body>
+</html>
+
+<!-- ==================================================== -->
+<!-- FILE 2: portfolio.html (صفحة معرض الأعمال المخصصة) -->
+<!-- ==================================================== -->
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Showcase | Abdullah Wageed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            cyan: '#06b6d4',
+                            indigo: '#6366f1',
+                            purple: '#a855f7',
+                            emerald: '#10b981',
+                            dark: '#030712'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 relative min-h-screen">
+
+    <!-- Header Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center text-slate-950 font-black text-xl">
+                    AW
+                </div>
+                <span class="text-xl font-extrabold text-white">Wageed<span class="text-cyan-400">.Gallery</span></span>
+            </a>
+
+            <a href="index.html" class="px-4 py-2 rounded-xl glass-panel border border-slate-700 text-xs font-bold text-slate-300 hover:text-white hover:border-cyan-500 transition-all">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Back to Main Site
+            </a>
+        </div>
+    </nav>
+
+    <!-- Portfolio Gallery Header Section -->
+    <section class="pt-36 pb-12 relative z-10 border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="px-4 py-1.5 rounded-full glass-panel border border-cyan-500/30 text-cyan-400 text-xs font-extrabold uppercase tracking-widest mb-4 inline-block">
+                Interactive Showcase
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-4">Engineering Portfolio</h1>
+            <p class="text-slate-400 text-base max-w-2xl mx-auto">Explore software systems, web applications, network topologies, and mobile solutions developed by Abdullah Wageed.</p>
+
+            <!-- Search Bar & Filters -->
+            <div class="mt-10 max-w-3xl mx-auto space-y-6">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                    <input type="text" id="projectSearch" onkeyup="searchProjects()" placeholder="Search by tech stack (e.g. ASP.NET, Flutter, MikroTik, SQL)..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors text-sm">
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button onclick="filterCategory('all')" class="cat-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-cyan-500 text-slate-950" data-cat="all">All Projects</button>
+                    <button onclick="filterCategory('web')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all glass-panel border border-slate-800 text-slate-300 hover:text-cyan-400" data-cat="web">Web & ASP.NET</button>
+                    <button onclick="filterCategory('mobile')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all glass-panel border border-slate-800 text-slate-300 hover:text-cyan-400" data-cat="mobile">Mobile Apps</button>
+                    <button onclick="filterCategory('network')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all glass-panel border border-slate-800 text-slate-300 hover:text-cyan-400" data-cat="network">Network & Automation</button>
+                    <button onclick="filterCategory('desktop')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition-all glass-panel border border-slate-800 text-slate-300 hover:text-cyan-400" data-cat="desktop">Desktop & DB</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid Section -->
+    <section class="py-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+
+                <!-- Item 1 -->
+                <div class="p-item web rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="asp.net c# sql server web library">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-[10px] font-bold uppercase tracking-wider border border-cyan-500/20">ASP.NET Web System</span>
+                            <i class="fa-solid fa-book-bookmark text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">HN_Book - E-Library Platform</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Digital web library system featuring user authentication, payment transaction logs, author profiles, and database security audit logs.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">ASP.NET</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">C#</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('HN_Book E-Library System', 'Complete digital library web management application engineered with ASP.NET Core and SQL Server. Features user management roles, payment transaction auditing, and relational author-book mapping.', ['C#', 'ASP.NET Core', 'SQL Server', 'Bootstrap'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500 text-slate-200 hover:text-cyan-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details & Case Study <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="p-item desktop rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="c# desktop sql server restaurant POS">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-[10px] font-bold uppercase tracking-wider border border-indigo-500/20">Desktop & POS</span>
+                            <i class="fa-solid fa-utensils text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Sana'a Restaurant POS</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Real-time order logging, kitchen dispatch queue, billing automation, and transactional SQL database handling.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-indigo-300">C# WinForms</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-indigo-300">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Sana\'a Restaurant Management POS', 'Commercial desktop software built for speed-critical order processing. Handles table layouts, kitchen printing triggers, daily sales reports, and multi-user privilege levels.', ['C# WinForms', 'SQL Server Transact-SQL', 'RDLC Reports'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500 text-slate-200 hover:text-indigo-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details & Case Study <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="p-item network rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="mikrotik hotspot wifi voucher network API">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-wider border border-purple-500/20">MikroTik Automation</span>
+                            <i class="fa-solid fa-wifi text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Wi-Fi Voucher Dispatcher</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Automated Wi-Fi internet card distribution integrated with local mobile payments and MikroTik Hotspot API.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-purple-300">MikroTik RouterOS</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-purple-300">REST API</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Automated Wi-Fi Voucher System', 'Network software integration that automatically triggers MikroTik RouterOS user creation upon receiving verified mobile payment webhooks.', ['MikroTik API', 'Python', 'Webhooks'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-purple-500 text-slate-200 hover:text-purple-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details & Case Study <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="p-item mobile rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="flutter dart mobile supabase cloud">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-[10px] font-bold uppercase tracking-wider border border-cyan-500/20">Mobile Application</span>
+                            <i class="fa-solid fa-mobile text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Cross-Platform Field Companion</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Flutter mobile app designed for field reporting, real-time sync with Supabase cloud database, and offline caching.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">Flutter</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">Dart</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-cyan-300">Supabase</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Flutter Field Work App', 'Mobile utility application built with Flutter & Dart for cross-platform iOS and Android deployment. Integrated real-time cloud data sync via Supabase BaaS.', ['Flutter', 'Dart', 'Supabase', 'Provider State Mgmt'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500 text-slate-200 hover:text-cyan-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details & Case Study <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="p-item network rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="cisco gns3 vmware vlan ospf routing network">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-wider border border-purple-500/20">Network Architecture</span>
+                            <i class="fa-solid fa-network-wired text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Enterprise Multi-Site Simulation</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Simulated multi-branch corporate topology featuring VLAN isolation, dynamic OSPF routing, and firewall rules.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-purple-300">GNS3</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-purple-300">Cisco IOS</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Enterprise Network Topology', 'Simulated WAN/LAN topology created using GNS3 and VMware. Features OSPF routing protocols, access control lists (ACLs), and VLAN trunking.', ['GNS3', 'Cisco IOS', 'VMware', 'Wireshark'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-purple-500 text-slate-200 hover:text-purple-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details & Case Study <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="p-item desktop rounded-3xl glass-panel border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-2 group" data-keywords="commercial logistics tracking supply chain c# sql">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-[10px] font-bold uppercase tracking-wider border border-indigo-500/20">Operations System</span>
+                            <i class="fa-solid fa-boxes-stacked text-slate-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Commercial Distribution Tracker</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Operational tracking tool for distribution logistics, field team reports, and inventory reconciliation.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-indigo-300">C# .NET</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] text-indigo-300">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Commercial Distribution Tracker', 'Logistics system designed to monitor regional stock movement, field representative daily reports, and stock variance analytics.', ['C# .NET', 'SQL Server', 'Excel Export API'], 'https://github.com')" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500 text-slate-200 hover:text-indigo-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            View Details & Case Study <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Detail Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-2xl w-full rounded-3xl p-8 border border-slate-800 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modalTitle" class="text-2xl font-extrabold text-white mb-3">Project Title</h3>
+            <p id="modalDesc" class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">Detailed description...</p>
+            
+            <div class="mb-6">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">Technologies Used:</span>
+                <div id="modalTech" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="flex gap-4 pt-4 border-t border-slate-800">
+                <a id="modalGithub" href="#" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-cyan-400 font-bold text-xs flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> Source Repository
+                </a>
+                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Gallery Filtering, Searching, and Modal Popup -->
+    <script>
+        function filterCategory(cat) {
+            const buttons = document.querySelectorAll('.cat-btn');
+            const items = document.querySelectorAll('.p-item');
+
+            buttons.forEach(btn => {
+                if(btn.getAttribute('data-cat') === cat) {
+                    btn.classList.add('bg-cyan-500', 'text-slate-950');
+                    btn.classList.remove('glass-panel', 'text-slate-300');
+                } else {
+                    btn.classList.remove('bg-cyan-500', 'text-slate-950');
+                    btn.classList.add('glass-panel', 'text-slate-300');
+                }
+            });
+
+            items.forEach(item => {
+                if(cat === 'all' || item.classList.contains(cat)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function searchProjects() {
+            const query = document.getElementById('projectSearch').value.toLowerCase();
+            const items = document.querySelectorAll('.p-item');
+
+            items.forEach(item => {
+                const keywords = item.getAttribute('data-keywords').toLowerCase();
+                const text = item.innerText.toLowerCase();
+                if(keywords.includes(query) || text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(title, desc, techStack, githubUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            
+            const techContainer = document.getElementById('modalTech');
+            techContainer.innerHTML = '';
+            techStack.forEach(t => {
+                const badge = document.createElement('span');
+                badge.className = 'px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 text-xs font-semibold';
+                badge.innerText = t;
+                techContainer.appendChild(badge);
+            });
+
+            document.getElementById('modalGithub').href = githubUrl;
+            document.getElementById('projectModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+
